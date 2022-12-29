@@ -27,7 +27,7 @@ class SinglyLinkedList {
         if (!this.length)
             return undefined;
         let temp = this.head;
-        if (this.length==1) {
+        if (this.length == 1) {
             this.head = null;
             this.tail = null;
             this.length--;
@@ -45,6 +45,18 @@ class SinglyLinkedList {
             return temp;
         }
     }
+    unshift(data) {
+        const newNode = new Node(data);
+        if (!this.length) {
+            this.head = newNode;
+            this.tail = this.head;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
 }
 const sll = new SinglyLinkedList(10);
 sll.push(20);
@@ -54,3 +66,8 @@ console.log(sll)
 console.log("Pop Operation");
 sll.pop();
 console.log(sll)
+
+console.log("Unshift Opeartion");
+sll.unshift(100);
+sll.unshift(200);
+console.log(sll);
