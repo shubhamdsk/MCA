@@ -23,8 +23,34 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
+    pop() {
+        if (!this.length)
+            return undefined;
+        let temp = this.head;
+        if (this.length==1) {
+            this.head = null;
+            this.tail = null;
+            this.length--;
+            return temp;
+
+        } else {
+            let prev = this.head;
+            while (temp.next) {
+                prev = temp;
+                temp = temp.next;
+            }
+            this.tail = prev;
+            this.tail.next = null;
+            this.length--;
+            return temp;
+        }
+    }
 }
 const sll = new SinglyLinkedList(10);
 sll.push(20);
 sll.push(30)
+console.log(sll)
+
+console.log("Pop Operation");
+sll.pop();
 console.log(sll)
