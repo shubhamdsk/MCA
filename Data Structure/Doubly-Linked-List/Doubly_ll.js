@@ -40,6 +40,19 @@ class Doublylinkedlist {
         this.length--;
         return temp;
     }
+    unshift(value) {
+        const newNode = new node(value);
+        if (!this.length) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head.prev = newNode;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
 }
 
 const dl = new Doublylinkedlist(10);
@@ -53,4 +66,9 @@ console.log("Pop Opration");
 dl.pop();
 dl.pop();
 dl.pop();
+console.log(dl);
+console.log("Unshift Opration");
+dl.unshift(100);
+dl.unshift(200);
+dl.unshift(300);
 console.log(dl);
