@@ -53,7 +53,23 @@ class Doublylinkedlist {
         this.length++;
         return this;
     }
+    shift() {
+        if (!this.length) return undefined;
+        let temp = this.head;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = temp.next;
+            this.head.prev = null;
+        }
+        temp.next = null;
+        temp.prev = null;
+        this.length--;
+        return temp;
+    }
 }
+
 
 const dl = new Doublylinkedlist(10);
 console.log("Push Operation");
@@ -71,4 +87,8 @@ console.log("Unshift Opration");
 dl.unshift(100);
 dl.unshift(200);
 dl.unshift(300);
+console.log(dl);
+console.log("Shift Opration");
+dl.shift();
+dl.shift();
 console.log(dl);
