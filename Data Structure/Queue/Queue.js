@@ -26,7 +26,7 @@ class Queue {
     }
 }
 const q = new Queue(5);
-console.log("Push Operation");
+console.log("Enqueue Operation");
 q.enqueue(44);
 q.enqueue(55);
 console.log(q);
