@@ -27,11 +27,6 @@ System.out.print("Enter Name: ");
 SC.nextLine();
 
 name[i]=SC.nextLine();
-
-System.out.print("Enter Roll Number: ");
-
-roll[i]=SC.nextInt();
-
 System.out.print("Enter 5 marks subject of student(one by one): ");
 
 for(int j=0; j<5; j++){
@@ -58,7 +53,7 @@ j = i;
 
 }
 
-System.out.println("Student "+name[j]+" having roll no"+roll[j]+" has max marks");
+System.out.println("Student "+name[j]+" having roll no has max marks"+max);
 
 }
 
