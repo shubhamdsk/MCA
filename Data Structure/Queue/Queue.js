@@ -4,7 +4,7 @@ class Node {
         this.next = null;
     }
 }
-class Queue {
+class queue {
     constructor(data) {
         const newNode = new Node(data);
         this.front = newNode;
@@ -24,7 +24,6 @@ class Queue {
         this.length++;
         return this;
     }
-
     dequeue() {
         let temp = this.front;
         if (!this.length) {
@@ -43,11 +42,14 @@ class Queue {
         return temp;
     }
 }
-const q = new Queue();
+const nn = new queue(29);
 console.log("Enqueue Operation");
-q.enqueue(44);
-q.enqueue(55);
-console.log(q);
+nn.enqueue(20);
+nn.enqueue(30);
+nn.enqueue(40);
+nn.enqueue(50);
+console.log(nn);
 console.log("Dequeue Operation");
-q.dequeue();
-console.log(q);
+nn.dequeue();
+nn.dequeue();
+console.log(nn)
