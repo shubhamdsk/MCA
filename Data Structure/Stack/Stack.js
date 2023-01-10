@@ -21,8 +21,23 @@ class stack {
         this.length++;
         return this;
     }
+    pop(){
+        let temp = this.top;
+        if (!this.length) {
+            return undefined;   
+        } else {
+            temp = this.top;
+            this.top = temp.next;
+            temp.next = null;
+        }
+        this.length--;
+        return temp;
+    }
 }
 const ns = new stack(10);
 ns.push(20);
 ns.push(30);
+console.log(ns);
+ns.pop();
+ns.pop();
 console.log(ns);
