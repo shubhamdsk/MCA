@@ -10,6 +10,19 @@ class stack {
         this.top = newNode;
         this.length = 1;
     }
+    push(data){
+        const newNode = new Node(data);
+        if (!this.length) {
+            this.top = newNode;
+        } else {
+            newNode.next = this.top;
+            this.top = newNode;
+        }
+        this.length++;
+        return this;
+    }
 }
 const ns = new stack(10);
+ns.push(20);
+ns.push(30);
 console.log(ns);
