@@ -1,25 +1,27 @@
-import  java.util.*;
+import java.util.Scanner;
+
 public class Prime_No {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter No : ");
-        int n = sc.nextInt();
-        int count = 0;
-        if (n <= 1) {
-            System.out.println("The number is not prime");
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    int a, b, i, j, flag;
+    System.out.printf("Enter lower bound of the interval: ");
+    a = sc.nextInt();
+    System.out.printf("\nEnter upper bound of the interval: ");
+    b = sc.nextInt();
+    System.out.printf("\nPrime numbers between %d and %d are: ", a, b);
+    for (i = a; i <= b; i++) {
+      if (i == 1 || i == 0) continue;
+      flag = 1;
+
+      for (j = 2; j <= i / 2; ++j) {
+        if (i % j == 0) {
+          flag = 0;
+          break;
         }
-        for (int i = 1; i <= n / 2; i++) {
-            if (n % i == 0) {
-                count++;
-            }
-        }
-        if (count > 1) {
-            System.out.println("The number is not prime");
-        }
-        else {
-            System.out.println("The number is prime");
-        }
-        sc.close();
+      }
+      if (flag == 1) System.out.println(i);
     }
+  }
 }

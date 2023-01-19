@@ -3,7 +3,10 @@ import java.util.Scanner;
 abstract class Staff {
 
   String mem_name, address;
-
+Staff(String mem_name,String address){
+  this.mem_name=mem_name;
+  this.address=address;
+}
   abstract void display();
 }
 
@@ -13,8 +16,7 @@ class FullTimeStaff extends Staff {
   double salary;
 
   FullTimeStaff(String mem_name, String address, String Dept, double salary) {
-    this.mem_name = mem_name;
-    this.address = address;
+    super(mem_name,address);
     this.Dept = Dept;
     this.salary = salary;
   }
@@ -31,8 +33,7 @@ class PartTimeStaff extends Staff {
   int NOH, RPH;
 
   PartTimeStaff(String mem_name, String address, int NOH, int RPH) {
-    this.mem_name = mem_name;
-    this.address = address;
+    super(mem_name,address);
     this.NOH = NOH;
     this.RPH = RPH;
   }
