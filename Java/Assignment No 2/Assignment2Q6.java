@@ -1,4 +1,5 @@
 // 6)  Define an abstract class Staff with members name &address. Define two sub classes FullTimeStaff(Departmet, Salary) and PartTimeStaff(numberOfHours, ratePerHour). Define appropriate constructors. Create n objects which could be of either FullTimeStaff or PartTimeStaff class by asking the user’s choice. Display details of FulltimeStaff and PartTimeStaff.
+
 import java.util.Scanner;
 abstract class Staff {
 
